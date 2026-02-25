@@ -2,12 +2,14 @@ import requests
 import telebot
 from bs4 import BeautifulSoup
 from time import sleep
+import dotenv
+import os 
 url = "https://kman.kyiv.ua/ua/Rezultati-II-miskoho-etapu-Vseukrainskoho-konkursu-zakhistu-2025-2026"
-USER_ID = 1788277612
-TELEGMRAM_TOKEN = "8617169245:AAHHfGOA1Wsh4XeKpCLiwrnmbp5jZptK56E"
+dotenv.load_dotenv()
 INTERVAL = 60
-
-bot = telebot.TeleBot(TELEGMRAM_TOKEN)
+TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN")
+USER_ID = os.getenv("USER_ID")
+bot = telebot.TeleBot(TELEGRAM_TOKEN)
 
 
 
